@@ -18,7 +18,11 @@ The **Metrics** page contains detailed graphs about your app and its environment
 
 These statistics are displayed as trends over time. The data covers the past three months, and you can adjust the view to display data for the past day, week, month, or quarter.
 
-{{% alert color="info" %}}This page describes metrics for licensed apps deployed to Mendix Cloud. Metrics are not available for Free Apps deployed to Mendix Cloud.<br><br>If your app is deployed to SAP Business Technology Platform (SAP BTP) instead, the **Metrics** page displays links to the SAP BTP cockpit.{{% /alert %}}
+{{% alert color="info" %}}
+This page describes metrics for licensed apps deployed to Mendix Cloud. Metrics are not available for Free Apps deployed to Mendix Cloud.
+
+If your app is deployed to SAP Business Technology Platform (SAP BTP) instead, the **Metrics** page displays links to the SAP BTP cockpit.
+{{% /alert %}}
 
 ## 2 Accessing the Metrics Graphs
 
@@ -26,7 +30,7 @@ To access the graphs on the **Metrics** page, you must have **Access to Monitori
 
 If you meet the above conditions, you can find the graphs by following these steps:
 
-1. Open your app in the [Developer Portal](http://sprintr.home.mendix.com).
+1. Open your app in the [Developer Portal](https://sprintr.home.mendix.com).
 2. In the navigation panel, click **Metrics**.
 3. Use the drop-down menu in the upper-right corner to select the environment you want to monitor.
 4. Use the **Period** and **Group** drop-down menus to choose the time period (day, week, month, or quarter) and the group (application, database, or all) for the graphs that you want to view.
@@ -411,27 +415,11 @@ There are two sets of values:
 ### 5.11 Database IOPS Burst Balance {#Trends-dbmxdatabaseburstbalance}
 
 {{% alert color="info" %}}
-As of [October 25, 2023](/releasenotes/developer-portal/mendix-cloud/#october-25-2023), whenever you create a new DB instance, it will be provisioned with a gp3 storage instance if it meets the eligibility criteria defined in the table below. This also occurs if your database is recreated.
-
-All existing databases of environments on eligible plans in Mendix Cloud (as specified in the table below) will eventually be migrated to gp3 storage instances. As of March 6, 2024, the databases of non-production environments have been migrated; production environments will also be migrated soon.
-
-| Mendix Plans      | Storage Instance Type | Storage Size         | Baseline Storage Performance | Provisioned IOPS Range | Provisioned Throughput Range |
-|-------------------|-----------------------|----------------------|------------------------------|------------------------|------------------------------|
-| S and M           | gp2                   | Less than 20 GiB     | 100 IOPS (3000 Burst)         | 100 - 1197 IOPS        | 128-250 MiB/s                |
-| L, XL, XXL, and XXXL | gp3                   | Between 20 and 400 GiB | 3000 IOPS / 125 MiB/s        | N/A                    | N/A                          |
-| XXXL              | gp3                   | 400 GiB and higher   | 12000 IOPS / 500 MiB/s       | 12000 - 64000 IOPS     | 500 - 4000 MiB/s             |
-
-Compared to gp2, gp3 provides higher baseline storage performance and does not require any burst balance. For more information on gp2 and gp3 performance, see the [AWS gp3 storage](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#gp3-storage) page.
-
-Burst balance metrics are not available for databases with the gp3 storage instance type.
+Burst balance metrics are not available for databases with the gp3 storage instance type. This applies to any databse with a storage size of 20 GiB or more. For details, see [Migration to gp3 Storage Instances](#gp3-migration), below.
 {{% /alert %}}
 
 {{% alert color="info" %}}
 You will not see this graph if you are using the [Basic License](/developerportal/deploy/basic-package/) because you are using a private schema on a shared database server.
-{{% /alert %}}
-
-{{% alert color="info" %}}
-Databases larger than 1,000 GiB have a base performance that is equal to or greater than the maximum burst performance. This means depleting the Database IOPS Burst Balance does not affect their performance.
 {{% /alert %}}
 
 The **Database IOPS burst balance** graph shows the number of IOPS credits accrued to support burstable performance. The metric is expressed as a percentage; 100% means that the volume has accumulated the maximum number of credits.
@@ -444,7 +432,27 @@ For more information, see the AWS document [Overview of Monitoring Metrics in Am
 
 If your database uses a high level of IOPS over a sustained period, this may impact your app's performance. If your database burst balance reduces consistently, you need to ensure that there are periods when there is less activity so that the database burst balance can be restored.
 
+Databases larger than 1,000 GiB have a base performance that is equal to or greater than the maximum burst performance. This means depleting the database IOPS burst balance does not affect their performance.
+
 For more information, see the AWS Database blog [Understanding Burst vs. Baseline Performance with Amazon RDS and GP2](https://aws.amazon.com/blogs/database/understanding-burst-vs-baseline-performance-with-amazon-rds-and-gp2/).
+
+#### 5.11.1 Migration to gp3 Storage Instances {#gp3-migration}
+
+Burst balance metrics are not available for databases with the gp3 storage instance type.
+
+As of [October 25, 2023](/releasenotes/developer-portal/mendix-cloud/#october-25-2023), whenever you create a new DB instance, it will be provisioned with a gp3 storage instance if it meets the eligibility criteria defined in the table below. This also occurs if your database is recreated.
+
+As of [March 26, 2024](/releasenotes/developer-portal/mendix-cloud/#march-26-2024), all existing databases of environments on eligible plans in Mendix Cloud (as specified in the table below) have also been migrated to gp3 storage instances.
+
+| Storage Size           | Storage Instance Type | Baseline Storage Performance | Provisioned IOPS Range | Provisioned Throughput Range |
+|------------------------|-----------------------|------------------------------|------------------------|------------------------------|
+| Less than 20 GiB       | gp2                   | 100 IOPS (3000 Burst) / 125 MiB/s | 100 - 1197 IOPS   | 128-250 MiB/s                |
+| Between 20 and 400 GiB | gp3                   | 3000 IOPS / 125 MiB/s        | N/A                    | N/A                          |
+| 400 GiB and higher     | gp3                   | 12000 IOPS / 500 MiB/s       | 12000 - 64000 IOPS     | 500 - 4000 MiB/s             |
+
+Compared to gp2, gp3 provides higher baseline storage performance and does not require any burst balance. For more information on gp2 and gp3 performance, see the [AWS gp3 storage](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#gp3-storage) page.
+
+For details on DB storage size for various plans, see [Cloud Resource Packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack).
 
 ## 6 Read More
 

@@ -65,13 +65,10 @@ Should you consider using a connected environment, the following URLs should be 
 
 7. Enter the following information:
 
-    1. **Installation Type**  – Choose Global Installation if you want a single operator namespace to manage multiple namespaces or just a single operator namespace. For more information, see [Global Operator](/developerportal/deploy/global-operator/).
-
-    2. **Cluster Name** – The name that you want to give the cluster which you are creating.
-
-    3. **Cluster Type** – Choose the correct type for your cluster. For more information, see [Supported Providers](/developerportal/deploy/private-cloud-supported-environments/).
-
-    4. **Description** – An optional description of the cluster which will be displayed under the cluster name in the Cluster Manager.
+    * **Installation Type**  – Choose **Global Installation** if you want a single Operator namespace to manage multiple namespaces, or **Namespace Installation** if you want the Operator to only manage one namespace. For more information, see [Global Operator](/developerportal/deploy/global-operator/).
+    * **Cluster Name** – The name that you want to give the cluster which you are creating.
+    * **Cluster Type** – Choose the correct type for your cluster. For more information, see [Supported Providers](/developerportal/deploy/private-cloud-supported-environments/).
+    * **Description** – An optional description of the cluster which will be displayed under the cluster name in the Cluster Manager.
 
 8. Click **Create**.
 
@@ -185,7 +182,6 @@ Future Studio Pro releases will have an option to use alternative (newer) LTS ve
 If an app's MDA was built using a newer Java version, Mendix Operator 2.15.0 (and newer versions) will detect this and use a base image with the same major Java version that was used to build the MDA.
 
 {{% /alert %}}
-
 
 ### 6.2 Endpoint (network) Configuration {#advanced-network-settings}
 
@@ -424,9 +420,9 @@ spec:
 # ...
 ```
 
-#### 6.4.1 Resource Definition via Operator Configuration Manifest
+#### 6.4.1 Resource Definition via Operator Configuration Manifest {#resource-definition-ocm}
 
-For a given namespace, all the resource information is aggregated in the `mendix-operator-configuration` manifest. This centralizes and overrides all the configuration explained above. For an example of the Operator configuration manifest, see below. Note that the below configuration is just for reference puropose.
+For a given namespace, all the resource information is aggregated in the `mendix-operator-configuration` manifest. This centralizes and overrides all the configuration explained above. For an example of the Operator configuration manifest, see below. Note that the below configuration is just for reference purpose.
 
 ```yaml
 apiVersion: privatecloud.mendix.com/v1alpha1
@@ -750,7 +746,7 @@ When an environment is scaled (manually or automatically), it will not be restar
 Scaling an environment up (increasing the number of replicas) adds more pods - without restarting any already running pods; once the additional pods become available, they will start receiving HTTP (or HTTPS) requests.
 Scaling an environment down (decreasing the number of replicas) removes some of the running pods - without restarting remaining pods; all HTTP (or HTTPS) traffic will be routed to the remaining pods.
 
-#### 6.7.3 Vertical Pod Autoscaling
+#### 6.7.3 Vertical Pod Autoscaling {#vertical-pod-autoscaling}
 
 [Vertical pod autoscaling](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler) can automatically configure CPU and memory resources and requirements for a pod.
 
@@ -806,7 +802,7 @@ In the `json` format, newline characters will be sent as `\n` (as specified in t
 For example, to correctly display newline characters in Grafana, use the [Escape newlines](https://github.com/grafana/grafana/pull/31352) button.
 {{% /alert %}}
 
-### 6.9 Pod labels
+### 6.9 Pod labels {#pod-labels}
 
 #### 6.9.1 General pod labels
 
@@ -944,7 +940,7 @@ When you delete a namespace, this removes the namespace from the cluster in the 
 {{< figure src="/attachments/developerportal/deploy/private-cloud/private-cloud-cluster/image26.png" >}}
 
 {{% alert color="info" %}}
-In the case of a Global Operator managed namespace, the managed namespace will not be deleted from the cluster. You must delete it from the cluster manually.
+In the case of a Global Operator managed namespace, the managed namespace will not be deleted from the cluster. You must delete it from the cluster manually. Additionally, you also need to remove the managed namespace from the list of managed namespaces in the Operator configuration of the main namespace. 
 {{% /alert %}}
 
 In order to delete the namespace from the cluster, perform the following steps:
@@ -1101,7 +1097,7 @@ This is addressed in Mendix Operator version 2.15.0; if you need to remove an in
 
 You can configure the runtime metrics for the environment in the **Runtime** section. For more information, see [Customize Runtime Metrics](#customize-runtime-metrics).
 
-You can also configure the pod labels for the environment in the **Labels** section. For more information, see [App Pod Labels](https://docs.mendix.com/developerportal/deploy/private-cloud-cluster/#68-pod-labels).
+You can also configure the pod labels for the environment in the **Labels** section. For more information, see [App Pod Labels](#pod-labels).
 
 #### 7.2.2 Members
 
@@ -1264,6 +1260,10 @@ Once you enable the **Use custom core resources plans** button, you cannot switc
 
 The **Installation** tab shows you the Configuration Tool which you used to create the namespace, together with the parameters which are used to configure the agent. You can use the Configuration Tool again to change the configuration of your namespace by pasting the command into a command line terminal as described in [Running the Configuration Tool](/developerportal/deploy/standard-operator/#running-the-tool), above. You can also download the Configuration Tool again, if you wish.
 
+{{% alert color="info" %}}
+In case of Global Operator Managed namespace, you will see the Configuration tab instead of the Installation tab. For more information, see [Global Operator Namespace](/developerportal/deploy/global-operator/)
+{{% /alert %}}
+
 #### 7.2.7 Additional Information
 
 This tab shows information on the versions of the various components installed in your namespace.
@@ -1323,6 +1323,10 @@ If you want to use the Private Cloud License Manager, the Mendix Operator must b
 {{% /alert %}}
 
 For more information, see [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/).
+
+{{% alert color="info" %}}
+If Global Operator is configured with [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/), you can view the **Runtime** and **Operator** list of licenses for the main namespace, and only the list of **claims** for the managed namespace.
+{{% /alert %}}
 
 ## 8 Current Limitations
 

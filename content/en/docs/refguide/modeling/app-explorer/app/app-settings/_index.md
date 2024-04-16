@@ -56,20 +56,28 @@ Here you have the option to change the default URL prefix for all pages and micr
 The URL prefix must be alphanumeric. It cannot be empty, contain whitespace, or contain any of the following values: 
 
 * "api-doc"
+* "file"
 * "odata"
 * "odata-doc"
-* "pages"
 * "reload"
 * "rest-doc"
 * "ws"
 * "ws-doc"
 * "xas"
 
+Furthermore, static files are served on `/`. So any prefix that has the same name as a static folder located in `/deployment/web/` will cause an error.
+
 If the URL prefix breaks any of the rules mentioned above, then you will get a consistency error.
 
 ### 3.5 Java Version{#java-version}
 
 Here you can select which Java version to use for you application.
+
+{{% alert color="info" %}}
+
+For Studio Pro versions 10.6.7 and 10.8.0 and above, you can choose Java 17.
+
+{{% /alert %}}
 
 For local development the JDK configured in the [Studio Pro preferences](/refguide/preferences-dialog/#jdk-directory) has to be compatible with the Java version configured here.
 
@@ -255,7 +263,7 @@ Certificates can be installed in the Windows Certificate Store using the **Insta
 {{% /alert %}}
 {{% alert color="info" %}}
 
-When an SSLException occurs at runtime with the message `HelloRequest followed by an unexpected handshake message` or when a web service does not respond (Java 6 update 21 and above) when using the imported certificates, this is caused by either the client or server not being [RFC-5746](http://www.ietf.org/rfc/rfc5746.txt)-compatible.
+When an SSLException occurs at runtime with the message `HelloRequest followed by an unexpected handshake message` or when a web service does not respond (Java 6 update 21 and above) when using the imported certificates, this is caused by either the client or server not being [RFC-5746](https://www.ietf.org/rfc/rfc5746.txt)-compatible.
 
 If updating the client and server to be compatible with RFC-5746 is not feasible, the following should be added to **Extra JVM parameters** in the **Server** tab to avoid this exception:
 
@@ -265,7 +273,7 @@ Be warned that this does make the client-server communication vulnerable to an e
 
 When client and server are RFC-5746 compatible at a future point in time, this JVM parameter can be removed.
 
-For background information, see [Transport Layer Security (TLS) Renegotiation Issue Readme](http://www.oracle.com/technetwork/java/javase/documentation/tlsreadme2-176330.html).
+For background information, see [Transport Layer Security (TLS) Renegotiation Issue Readme](https://www.oracle.com/technetwork/java/javase/documentation/tlsreadme2-176330.html).
 
 {{% /alert %}}
 
