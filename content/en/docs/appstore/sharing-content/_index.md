@@ -5,7 +5,6 @@ weight: 4
 no_list: false
 description_list: true
 description: "Describes how to create and share Mendix Marketplace content."
-tags: ["marketplace", "public marketplace", "private marketplace", widget", "module"]
 aliases:
     - /appstore/overview/share-content/
     - /appstore/general/share-app-store-content/
@@ -13,7 +12,7 @@ aliases:
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-## 1 Introduction
+## Introduction
 
 The Mendix Marketplace is driven by contributions from members of the community who share the connectors, modules, and apps they have built with the Mendix Platform. This how-to shows how to add and update Marketplace content.
 
@@ -22,13 +21,13 @@ This how-to teaches you how to do the following:
 * Add new content and promotions to share in the Marketplace
 * Update existing Marketplace content
 
-## 2 Prerequisites
+## Prerequisites
 
 Before starting this how-to, make sure you have completed the following prerequisites:
 
-* Familiarize yourself with the [Marketplace Overview](/appstore/overview/) and [Using Marketplace Content](/appstore/overview/use-content/)
+* Familiarize yourself with the [Marketplace Overview](/appstore/overview/) and [Using Marketplace Content](/appstore/use-content/)
 
-## 3 Marketplace Content Development Guidelines {#guidelines}
+## Marketplace Content Development Guidelines {#guidelines}
 
 This section presents guidelines for developing content that you will submit to the Mendix Marketplace.
 
@@ -36,7 +35,7 @@ This section presents guidelines for developing content that you will submit to 
 Submitted Marketplace content will be reviewed within five working days.
 {{% /alert %}}
 
-### 3.1 General {#general}
+### General {#general}
 
 These are some general guidelines for creating new Marketplace content:
 
@@ -46,7 +45,7 @@ These are some general guidelines for creating new Marketplace content:
 
 You can add information the end-user should know to the component [Documentation](#doc) when you are adding the content to the Marketplace.
 
-### 3.2 Intellectual Property
+### Intellectual Property
 
 When considering intellectual property (IP) in the Mendix Marketplace, follow these guidelines:
 
@@ -57,7 +56,7 @@ When considering intellectual property (IP) in the Mendix Marketplace, follow th
 
 For more information, see [Apply IP Protection](/appstore/creating-content/sol-ip-protection/).
 
-### 3.3 For Widgets
+### For Widgets
 
 To develop widgets and submit them to Marketplace, follow these guidelines:
 
@@ -70,7 +69,7 @@ To develop widgets and submit them to Marketplace, follow these guidelines:
 * Use hooks and functional components over class components
 * Create test pages for mobile when content is made for mobile platforms
 
-### 3.4 For Modules
+### For Modules
 
 To develop modules and submit them to the Marketplace, follow these guidelines:
 
@@ -83,7 +82,7 @@ To develop modules and submit them to the Marketplace, follow these guidelines:
 
         * When putting `.jar` files in the `userlib` folder, make sure the name includes a version number (for example, `org.apache.commons.io-2.3.0.jar`) and is accompanied by a blank `{jarfile-including-version}.{module_name}.RequiredLib` file so that users know where the .*jar* files come from (for example, for the module *MyModule*, `org.apache.commons.io-2.3.0.jar.MyModule.RequiredLib`)
 
-            {{< figure src="/attachments/appstore/sharing-content/userlibBlankFiles_boxed.jpg" width="400"  >}}
+            {{< figure src="/attachments/appstore/sharing-content/userlibBlankFiles_boxed.jpg" width="400"  class="no-border" >}}
 
 * Verify that the module's Java actions compile correctly (the easiest way to check is to create a deployment package, as it will clean the deployment folder and rebuild the app; for more information, see [Environments](/developerportal/deploy/environments/))
 * Reduce the use of layouts and use snippets instead, which will result in fewer module dependencies and will reduce the number of potential errors (for example, missing layouts)
@@ -94,7 +93,7 @@ To develop modules and submit them to the Marketplace, follow these guidelines:
 * Do not rename entities and attributes when creating new versions, as data in these entities will get lost (replacing an existing module is based on the entity names)
 * The module must include the English language
 
-### 3.5 Using a GitHub Repo {#github}
+### Using a GitHub Repo {#github}
 
 You can set up a GitHub repository to contain the development content for your Marketplace component, and you can share this repo URL as the component source on the [Package](#package) page in the submission process.
 
@@ -112,30 +111,30 @@ To create a new component release for the Mendix Marketplace, follow these steps
 3. In this GitHub release, provide an official name, and write the release notes. You can use these for the Marketplace release as well.
 4. If you add the *.mpk* file as a binary file to the release tag, the Mendix Marketplace automatically syncs the *.mpk* to your new draft:
 
-    {{< figure src="/attachments/appstore/sharing-content/github-releases.png" >}}
+    {{< figure src="/attachments/appstore/sharing-content/github-releases.png" class="no-border" >}}
 
 5. Link this GitHub release to the upcoming Mendix Marketplace release by mentioning the GitHub release number in the description. For more details, see the [Package](#package) and [Updating Existing Marketplace Content](#updating) sections below.
 
-### 3.6 Mendix Partner Program
+### Mendix Partner Program
 
 For more information on what this program offers, see [Mendix Component Partner Program](/appstore/partner-program/) and [Mendix Commercial Solution Partner Program](https://www.mendix.com/partners/become-a-partner/isv-program/).
 
-## 4 Adding New Marketplace Content {#adding}
+## Adding New Marketplace Content {#adding}
 
 To get started, click **Add Content** in the top bar of the Marketplace home screen. Follow the steps in the sections below to add and submit the content.
 
 {{% alert color="info" %}}
 <a id="draft"></a>On each page of the upload flow, click one of the following buttons:
 
-* **Save Draft** to save the details you have entered so far to the draft (which you can access via the [My Drafts](/appstore/overview/my-marketplace/#my-drafts) link in the top bar)
+* **Save Draft** to save the details you have entered so far to the draft (which you can access via the [My Drafts](/appstore/overview/#my-drafts) link in the top bar)
 * **Save & Continue** to go to the next page of the upload flow
 {{% /alert %}}
 
-### 4.1 General {#general}
+### General {#general}
 
-On the **General** page,  you need to provide some details about your component. 
+On the **General** page, you need to provide some details about your component. 
 
-#### 4.1.1 Describing Your Content
+#### Describing Your Content
 
 Follow these steps to describe your content:
 
@@ -147,8 +146,8 @@ Follow these steps to describe your content:
 
     * <a id="public"></a>**Public Marketplace (all Mendix users)** – your component will be available to the Mendix community
         * This content will have to be reviewed and approved by Mendix before it is available)
-    * <a id="private"></a>**Private Marketplace (your company only)** – your content will receive the **Private** label and be available only via your [Company Content](/appstore/overview/my-marketplace/#company-content) page
-        * Selected private content of a content group can also be made available to [content group guests](/appstore/overview/my-marketplace/#guests) for download
+    * <a id="private"></a>**Private Marketplace (your company only)** – your content will receive the **Private** label and be available only via your [Company Content](/appstore/overview/#company-content) page
+        * Selected private content of a content group can also be made available to [content group guests](/appstore/overview/#guests) for download
         * This content will not be reviewed by Mendix
 
     {{% alert color="warning" %}}You can only set the location in the initial version of your content. You cannot change this setting by updating the Marketplace component later.{{% /alert %}}
@@ -159,40 +158,40 @@ Follow these steps to describe your content:
 
     {{% alert color="warning" %}}You can use rich text in the editor. However, using rich text at the beginning of the description is not recommended, as it will not get rendered properly. You should add a few lines of regular text before using rich text.{{% /alert %}}
 
-#### 4.1.2 Providing License Details {#license}
+#### Providing License Details {#license}
 
 Select the type of **License** you want applied to your app.
 
-##### 4.1.2.1 Open-Source Software Licenses
+##### Open-Source Software Licenses
 
 These are the open-source software license options available and their requirements:
 
 | | **Notes** | **Commercial use allowed?** | **Component code needs to be in public repo?** | **License text required with copyright info in code and distribution artifact?** | **Can modify?** (Mention modifications to code) | **Can consuming apps use without making their code public?** | **Notice files should be distributed with artifact?** | **Original component source code to be distributed with consuming app?** | **Can sub-license?** |
 | --- | --- | --- | --- | --- | --- | --- |  --- | --- | --- |
-| [MIT](https://opensource.org/licenses/MIT) | Add a specific *license.txt* file in your artifacts (meaning, in the *.mpk*). | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/cross-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/cross-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} |
-| **BSD 2.0, 3.0** | | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/cross-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} |
-| **Apache 1.0** | | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/cross-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} |
-| [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | Add a specific *license.txt* file in your artifacts (meaning, in the *.mpk*). | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/cross-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/cross-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}}  |
-| **Creative Commons CC0 1.0 Universal (CC-0)** (Public Domain) | | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/cross-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/cross-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/cross-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/cross-mark.svg" >}} | {{< figure src="/attachments/appstore/sharing-content/check-mark.svg" >}} |
+| [MIT](https://opensource.org/licenses/MIT) | Add a specific *license.txt* file in your artifacts (meaning, in the *.mpk*). | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
+| **BSD 2.0, 3.0** | | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
+| **Apache 1.0** | | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
+| [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | Add a specific *license.txt* file in your artifacts (meaning, in the *.mpk*). | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}}  |
+| **Creative Commons CC0 1.0 Universal (CC-0)** (Public Domain) | | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
 
 {{% alert color="info" %}}
-The [GNU General Public License (GPL), version 3](https://www.gnu.org/licenses/gpl-3.0.en.html)  is not available to use, as everything licensed under GNU GPL is public; GNU GPL has a strong copyleft effect; modification has a strong copyleft effect; and all consuming apps should make their code public.
+The [GNU General Public License (GPL), version 3](https://www.gnu.org/licenses/gpl-3.0.en.html) is not available to use, as everything licensed under GNU GPL is public; GNU GPL has a strong copyleft effect; modification has a strong copyleft effect; and all consuming apps should make their code public.
 {{% /alert %}}
 
-##### 4.1.2.2 Proprietary Licenses {#proprietary-license}
+##### Proprietary Licenses {#proprietary-license}
 
 You can configure your own proprietary license for your company’s content. The license can be used for multiple components, and it can be used by everyone within your organization. 
 
-This license can be created for a new **Public Marketplace (all Mendix users)** component by requesting a new license and submitting it alongside the component. The license needs to be [approved by Mendix](/appstore/sharing-content/#guidelines) after you have created and submitted it the first time. Once it has been submitted for approval, you and the people within your organization can also use it it for other components.
+This license can be created for a new **Public Marketplace (all Mendix users)** component by requesting a new license and submitting it alongside the component. The license needs to be [approved by Mendix](/appstore/sharing-content/#guidelines) after you have created and submitted it the first time. Once it has been submitted for approval, you and the people within your organization can also use it for other components.
 
 Follow these steps to configure a proprietary license for a new public component:
 
 1. Click **Request New License**.
-2. Add a **License Name**, which is the name that will be displayed on the [component details page](/appstore/overview/#details).
+2. Add a **License Name**, which is the name that will be displayed on the [component details page](/appstore/component-details/).
 3. Add a **License URL**, which should lead the user to a web page that lists the terms and conditions for using the component. Users can navigate to this web page by clicking the license name on the component details page.
 4. Add a **Reason** for the new license. This is for the purpose of the Mendix review only, and it will not be displayed on the component details page.
 
-#### 4.1.3 Generating New Leads {#lead-generation}
+#### Generating New Leads {#lead-generation}
 
 A lead is a potential sales contact that expresses interest in your product or service. Lead routing is the end-to-end process of collecting the leads and distributing them to you. It is possible to configure lead routing for the following content types in the Marketplace:
 
@@ -212,13 +211,13 @@ You can configure the name of your **Main call-to-action** button from the follo
 
 In the **How would you like to receive information on new leads?** field, you must specify the email address (or addresses) where notifications and information can be sent.
 
-#### 4.1.4 Finishing Up
+#### Finishing Up
 
 To finish up configuring this page, click **Upload** to upload an icon for your component.
 
-{{< figure src="/attachments/appstore/sharing-content/general.png" >}}
+{{< figure src="/attachments/appstore/sharing-content/general.png" class="no-border" >}}
 
-### 4.2 Package {#package}
+### Package {#package}
 
 {{% alert color="info" %}}
 If you are using **Solutions**, you will not see the option to select your content source. If you are using **Industry Template**, selecting a content source is optional.
@@ -238,7 +237,7 @@ If this is the first version of the component you are uploading, the number in t
 
 Enter **Release Notes** for the component in the box provided describing what is new in that release.
 
-### 4.3 Enable {#doc}
+### Enable {#doc}
 
 On the **Enable** page, you can enter details on requirements and configuration for your component in the **Documentation**. Note that the documentation option is only available when the **Import Documentation** box has not been selected on the **Package** page above. 
 
@@ -259,11 +258,11 @@ The editor comes with a set of basic formatting tools, such as bold, bullet list
 
 <a id="screenshot"></a>Click **Upload Screenshot** to select images of the component (especially for configuration) from your computer and upload them (this is required for submitting a new component):
 
-{{< figure src="/attachments/appstore/sharing-content/enable.png"  >}}
+{{< figure src="/attachments/appstore/sharing-content/enable.png"  class="no-border" >}}
 
 You can optionally add a **YouTube URL** and a **Demo URL**.
 
-### 4.4 Capabilities {#capabilities}
+### Capabilities {#capabilities}
 
 On the **Capabilities** page, you can provide the following details about an industry template:
 
@@ -273,23 +272,23 @@ On the **Capabilities** page, you can provide the following details about an ind
 * A **Use Case** relevant to the content (enter a **Header** and **CTA URL**)
 * **External Links** relevant to the content
 
-{{< figure src="/attachments/appstore/sharing-content/capabilities.png"  >}}
+{{< figure src="/attachments/appstore/sharing-content/capabilities.png"  class="no-border" >}}
 
-### 4.5 Publish {#publish}
+### Publish {#publish}
 
 Finally, on the **Publish** page, you can review all the details of your component you entered so far and edit as necessary (via the **Edit** button per section) before publishing.
 
-{{< figure src="/attachments/appstore/sharing-content/publish.png"   width="600"  >}}
+{{< figure src="/attachments/appstore/sharing-content/publish.png"   width="600"  class="no-border" >}}
 
 After you click **Publish Content**, your draft will be reviewed by Mendix before it is visible in the Marketplace. 
 
 For details on the approval process, see [Governance Process](/appstore/sharing-content/governance-process/).
 
-## 5 Updating Existing Marketplace Content {#updating}
+## Updating Existing Marketplace Content {#updating}
 
 After you publish a component in the Mendix Marketplace, it is your responsibility to make sure that components are updated on a regular cadence. This is important so that components work with the latest versions of dependencies (especially Mendix Studio Pro), and it is required so Mendix can ensure the quality of components in the Marketplace. This means you need to monitor, maintain, and evolve the component so that the Marketplace listing is more noticeable, you can build user loyalty, and you can maintain the good reputation of your company. If the component is not updated regularly, the Marketplace listing will be analyzed for removal from public visibility.
 
-Mendix expects the following updates for components in the Platform, Community, and Premium [support categories](/appstore/overview/#category):
+Mendix expects the following updates for components in the Platform, Community, and Premium [support categories](/appstore/marketplace-content-support/#category):
 
 * Bug fixes
 * New features
@@ -298,10 +297,10 @@ Mendix expects the following updates for components in the Platform, Community, 
 
 To update content that has already been published, follow these steps:
 
-1. Find the component by clicking **My Marketplace** and selecting one of the following:
+1. Find the component by going to the Marketplace home page and selecting one of the following:
     * **My Content**
     * **Company Content**
-    * **Content Groups** (note that if an existing Marketplace component is assigned to a [content group](/appstore/overview/my-marketplace/#content-groups) as specific content group [content](/appstore/overview/my-marketplace/#group-content), you can only update the component if you are a member of that group)
+    * **Content Groups** (note that if an existing Marketplace component is assigned to a [content group](/appstore/overview/#content-groups) as specific content group [content](/appstore/overview/#group-content), you can only update the component if you are a member of that group)
 
 2. Click the menu item next to the component you want to update and select **Manage Draft**.
 
@@ -316,4 +315,4 @@ To update content that has already been published, follow these steps:
 
 5. On the **Publish** page, you can review all the details of your component you entered so far and edit as necessary (via the **Edit Section** button) before clicking **Publish Content**.
 
-## 6 Documents in This Category
+## Documents in This Category

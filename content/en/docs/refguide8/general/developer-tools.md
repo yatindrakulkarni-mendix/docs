@@ -1,13 +1,11 @@
 ---
 title: "Developer Tool Recommendations"
 url: /refguide8/developer-tools/
-category: "General Info"
 weight: 60
 description: "Describes the best third-party tools to use when developing with Mendix."
-tags: ["Linux", "GNU", "Firefox", "devtools", "Selenium", "Eclipse", "SOAP", "REST", "Visual Studio Code", "studio pro"]
 ---
 
-## 1 Introduction
+## Introduction
 
 To make your development life a little easier, here is a list of helpful third-party tools that will speed up your app-development efforts:
 

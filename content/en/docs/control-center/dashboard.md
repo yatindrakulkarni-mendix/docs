@@ -1,9 +1,7 @@
 ---
 title: "Dashboard"
 url: /control-center/dashboard/
-category: "Control Center"
 description: "Describes the Dashboard page in the Mendix Control Center."
-tags: ["control center", "mendix admin", "dashboard"]
 weight: 5
 no_list: true 
 description_list: true
@@ -13,11 +11,11 @@ description_list: true
 A member in Control Center means a user of the Mendix platform who participates in the development process. It does not mean an end-user of an app built in the Mendix Platform.
 {{% /alert %}}
 
-## 1 Introduction
+## Introduction
 
 The Control Center dashboard gives you an overview of various activities for your company on the Mendix Platform:
 
-{{< figure src="/attachments/control-center/dashboard/dashboard.png" >}}
+{{< figure src="/attachments/control-center/dashboard/dashboard.png" class="no-border" >}}
 
 These are some examples of what you can find on the dashboard:
 

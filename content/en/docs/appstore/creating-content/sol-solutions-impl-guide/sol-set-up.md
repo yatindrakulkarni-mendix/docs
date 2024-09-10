@@ -4,14 +4,13 @@ url: /appstore/creating-content/sol-set-up
 linktitle: "Set Up a Solution"
 weight: 10
 description: "Describes properly initializing a Mendix solution to be compatible with future upgrades."
-tags: ["solutions", "set-up solution", "startup", "adaptable solutions", "prescriptive solutions" ]
 ---
 
-## 1 Introduction
+## Introduction
 
 Setting up a Mendix solution is the process of creating your app from the solution package and configuring it to be compatible with future upgrades.
 
-## 2 Prerequisites
+## Prerequisites
 
 To set up a Mendix solution, make sure the following prerequisites are met:
 
@@ -19,17 +18,17 @@ To set up a Mendix solution, make sure the following prerequisites are met:
 * The solution must be version-controlled with Git so that it is compatible with upgrades
 * It is impossible to initialize a solution on a non-empty repository
 
-## 3 Setup Process
+## Setup Process
 
 To set up a solution, follow these steps:
 
 1. Open Studio Pro and [import](/refguide/import-and-export/) the *.mxsolution* package:
 
-    {{< figure src="/attachments/appstore/creating-content/sol-solutions-impl-guide/solution-import.png" alt="Import Solution" >}}
+    {{< figure src="/attachments/appstore/creating-content/sol-solutions-impl-guide/solution-import.png" alt="Import Solution" class="no-border" >}}
 
 2. Select the target directory for your solution and click **OK**.
 3. Once the solution is initialized, a special **solution-releases** branch is created. This branch contains the unchanged version of the solution (as provided by the ISV). You cannot make any changes in this branch, as that would render the solution incompatible with upgrades or lead to unpredictable errors during upgrades.
 
-### 4 Read More
+### Read More
 
 * [Upgrade a Solution](/appstore/creating-content/sol-upgrade/) 

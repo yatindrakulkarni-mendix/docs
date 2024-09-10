@@ -3,16 +3,15 @@ title: "Planning"
 url: /developerportal/project-management/epics/planning/
 weight: 20
 description: "Describes the Planning page in Epics. This page looks different, depending on whether you use the Scrum workflow or Kanban workflow."
-tags: ["Project Management", "Epics", "Sprint", "Planning", "Stories", Developer Portal"]
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details. 
 ---
-## 1 Introduction
+## Introduction
 
 The **Planning** page shows all your stories.
 
 The main area of the **Planning** page lists all the stories in different categories. Each row represents a story:
 
-{{< figure src="/attachments/developerportal/project-management/epics/planning/story-kanban.png" >}}
+{{< figure src="/attachments/developerportal/project-management/epics/planning/story-kanban.png" class="no-border" >}}
 
 Each row shows the following information about a story:
 
@@ -42,31 +41,31 @@ On the upper-right corner of the page, you can see two buttons:
     * **Board Settings** – Clicking this enables you configure the board settings.
         * For more information, see the [Board Settings](#settings) section.
 
-### 1.1 Selecting, Moving, Archiving, and Deleting Stories 
+### Selecting, Moving, Archiving, and Deleting Stories 
 
 To select a story, select the checkbox for the story when the mouse pointer becomes a pointing hand:
 
- {{< figure src="/attachments/developerportal/project-management/epics/planning/pointing-hand.png" width="30px" >}}
+ {{< figure src="/attachments/developerportal/project-management/epics/planning/pointing-hand.png" width="30px" class="no-border" >}}
 
 {{% alert color="info" %}}You can also use keyboard shortcuts to select multiple stories. For more information, see the [Keyboard Shortcuts](#keyboard-shortcuts) section.{{% /alert %}}
 
 To open the [story details](/developerportal/project-management/epics/board/#story-details) page, click the row of the story when the mouse pointer becomes an open hand:
 
-{{< figure src="/attachments/developerportal/project-management/epics/planning/open-hand.png" width="30px" >}}
+{{< figure src="/attachments/developerportal/project-management/epics/planning/open-hand.png" width="30px" class="no-border" >}}
 
 To move a story, drag the story to a different category. 
 
 To move multiple stories, select these stories, choose the category name where they should go from the drop-down list at the bottom of the page, and then click **Move**.
 
-{{< figure src="/attachments/developerportal/project-management/epics/planning/move-multiple-stories.png" >}}
+{{< figure src="/attachments/developerportal/project-management/epics/planning/move-multiple-stories.png" class="no-border" >}}
 
 To [archive](/developerportal/project-management/epics/archive/) or delete a story, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) at the end of the row, and then select the corresponding option:
 
-{{< figure src="/attachments/developerportal/project-management/epics/planning/archive-delete-story-kanban.png" >}}
+{{< figure src="/attachments/developerportal/project-management/epics/planning/archive-delete-story-kanban.png" class="no-border" >}}
 
 To archive or delete multiple stories, select these stories, and then click the corresponding option at the bottom of the page.
 
-#### 1.1.1 Keyboard Shortcuts For Selecting Stories{#keyboard-shortcuts}
+#### Keyboard Shortcuts For Selecting Stories{#keyboard-shortcuts}
 
 For Windows, you can use the following keyboard shortcuts to select stories on the **Planning** page:
 
@@ -77,19 +76,19 @@ For Windows, you can use the following keyboard shortcuts to select stories on t
 | Select multiple stories             | <kbd>Ctrl</kbd> + click        | <kbd>Command</kbd> + click        |
 | Select a range of stories           | <kbd>Shift</kbd> + click       | <kbd>Shift</kbd> + click          |
 
-## 2 Scrum Planning vs Kanban Planning {#different-plannings}
+## Scrum Planning vs Kanban Planning {#different-plannings}
 
 The **Planning** page offers different features to accommodate two different workflows: Scrum or Kanban. Depending on your choice of board type – Scrum or Kanban, the **Board** page looks a bit different.
 
 {{% alert color="info" %}}You can select your board type on the [Planning](/developerportal/project-management/epics/planning/#board-type) page.{{% /alert %}}
 
-### 2.1 Scrum Planning {#scrum-planning}
+### Scrum Planning {#scrum-planning}
 
 If your board style is Scrum, you can find the features below which accommodate your Scrum workflow.
 
 If there is an active Sprint, on the upper-left corner, you can find the name of the Sprint, when it ends, and how many stories and points it has. If you hover over the goal icon, you can see the goal of the Sprint:
 
-{{< figure src="/attachments/developerportal/project-management/epics/planning/scrum-planning.png" >}}
+{{< figure src="/attachments/developerportal/project-management/epics/planning/scrum-planning.png" class="no-border" >}}
 
 In the main area of the page, stories are grouped in these categories: **Active Sprint** (if there is an active Sprint), **Next Sprint**, **Refinement**, and **Backlog**.
 
@@ -102,19 +101,19 @@ On the upper-right corner, you can find these Scrum items if you click **More Op
 * **End Sprint** – Clicking this allows you to end the current Sprint. 
     * This is available only when this is a Sprint running at this moment.
 
-### 2.2 Kanban Planning {#kanban-planning}
+### Kanban Planning {#kanban-planning}
 
 If your board type is Kanban, the stories are grouped in these categories: **To Do**, **Refinement**, and **Backlog**. On the top of each category, you can see the total number of stories and points.
 
-{{< figure src="/attachments/developerportal/project-management/epics/planning/kanban-planning.png" >}}
+{{< figure src="/attachments/developerportal/project-management/epics/planning/kanban-planning.png" class="no-border" >}}
 
-## 3 Importing Stories {#import-stories}
+## Importing Stories {#import-stories}
 
 You can import your stories using an Excel file to Epics as follows:
 
 1. On the upper-right corner of the **Planning** page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) and then click **Import Stories**.
 
-   {{< figure src="/attachments/developerportal/project-management/epics/planning/import-stories.png" >}}
+   {{< figure src="/attachments/developerportal/project-management/epics/planning/import-stories.png" class="no-border" >}}
 
    The **Import Stories From Excel** dialog box opens.
 
@@ -154,28 +153,28 @@ You can import your stories using an Excel file to Epics as follows:
 
 You can find all the imported stories in the **Backlog**.
 
-## 4 Exporting Stories {#export-stories}
+## Exporting Stories {#export-stories}
 
 You can export your stories on the **Planning** page to an Excel file as follows:
 
 1. On the upper-right corner of the **Planning** page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) and then click **Export Stories**.
 
-   {{< figure src="/attachments/developerportal/project-management/epics/planning/export-stories.png" >}}
+   {{< figure src="/attachments/developerportal/project-management/epics/planning/export-stories.png" class="no-border" >}}
 2. Select from where you want to export stories.
 3. Click **Continue** to see a preview of the Excel file.
 4. Click **Export to Excel**.
 
-## 5 Board Settings {#settings}
+## Board Settings {#settings}
 
 When you click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) on the upper-right corner of the **Planning** page, and select **Board Settings**, a dialog box opens with four tabs: **Manage Tags**, **Board Type**, and **Toast Settings**. These tabs are described in the sections below.
 
-{{< figure src="/attachments/developerportal/project-management/epics/planning/board-settings.png" >}}
+{{< figure src="/attachments/developerportal/project-management/epics/planning/board-settings.png" class="no-border" >}}
 
-### 5.1 Managing Tags {#manage-tags}
+### Managing Tags {#manage-tags}
 
 On this tab, you can add, rename, and delete tags, as well as change tag colors. The changes here affect all the tags in your app.
 
-To add a tag, click **+Add Tag**, enter the name,  select a color, and then click **Save** {{% icon name="checkmark-circle" %}} to save it.
+To add a tag, click **+Add Tag**, enter the name, select a color, and then click **Save** {{% icon name="checkmark-circle" %}} to save it.
 
 To rename a tag, double-click the tag name, change the name in the text box, and then click outside the text box to save it.
 
@@ -183,12 +182,12 @@ To delete a tag, hover over the row of the tag, and then click the **Cancel** bu
 
 To change the tag color, click the current color, and then select the new color from the dialog box.
 
-### 5.2 Board Type {#board-type}
+### Board Type {#board-type}
 
 On this tab, you can switch between a Scrum workflow and Kanban workflow. The workflow you select determines how the [Board](/developerportal/project-management/epics/board/#different-boards) page and the [Planning](#different-plannings) page look.
 
-### 5.3 Toast Settings
+### Toast Settings
 
 On this tab, you can enable or disable the toast notifications that appear like this:
 
-{{< figure src="/attachments/developerportal/project-management/epics/planning/toast-notification.png" width="500px" >}}
+{{< figure src="/attachments/developerportal/project-management/epics/planning/toast-notification.png" width="500px" class="no-border" >}}

@@ -2,9 +2,8 @@
 title: "Shortcodes, Markdown, and HTML Examples"
 url: /community-tools/md-shortcode-examples/
 draft: true
-description: "Various test cases and examples for Markdown and shortcodes"
+description: "Various test cases and examples for Markdown and shortcodes. Use this page to see how various shortcodes, Markdown, and HTML elements render."
 linktitle: "Shortcodes, Markdown, and HTML"
-banner: "This is a draft and will not be rendered in the production website. Use this page to see how various shortcodes, Markdown, and HTML elements render."
 ---
 <!-- markdownlint-disable-file -->
 
@@ -56,7 +55,7 @@ This alert is indented to match the sub-list item.
 
 ```json
 {
-     "Status" :  "Stopped" ,
+     "Status" :  "Stopped",
      "EnvironmentId" :  "cd5fc610-edb0-43c5-a374-0439a6411ace",
      "Mode" :  "Acceptance",
      "Url" :  "https://calc-accp.mendixcloud.com",
@@ -66,16 +65,16 @@ This alert is indented to match the sub-list item.
 }
 ```
 
-#### HTTP Code Block with Line Numbers Disabled
+#### OQL Code Block
 
-```http {linenos=false}
-GET /projects/d92064a5-b1fd-4be4-97db-53fc90201d1c/epics HTTP/1.1
-Authorization: MxToken 7LJE…vk
+```sql
+ALTER DATABASE [YourDatabase] SET READ_COMMITTED_SNAPSHOT ON;
+CREATE ASSEMBLY [Mendix.SqlServerExtensions] FROM [a dll file] WITH PERMISSION_SET = SAFE;
 ```
 
-#### Java Code Block with Lines 4-6 Highlighted, and Line Numbering Starting at 33
+#### Java Code Block with Lines 1 and 4-6 Highlighted
 
-```java {hl_lines=["4-6"], linenostart=33}
+```java {hl_lines=[1,"4-6"]}
 @java.lang.Override
 public java.lang.String executeAction() throws Exception
 {
@@ -85,17 +84,17 @@ public java.lang.String executeAction() throws Exception
 }
 ```
 
-#### Plain Text Code Block
+#### Diff Code Block
 
-```text
-ALTER DATABASE [YourDatabase] SET READ_COMMITTED_SNAPSHOT ON;
-CREATE ASSEMBLY [Mendix.SqlServerExtensions] FROM [a dll file] WITH PERMISSION_SET = SAFE;
-```
-
-#### Plain Text Code Block Missing the "text" Parameter
-
-```
-If you don't specify any programming language, the code block looks a bit different. To keep the code blocks consistent throughout the docs, use "text" (as shown in the example above) if you aren't sure what programming language to specify.
+```diff
+public class Hello1
+{
+   public static void Main()
+   {
+-      System.Console.WriteLine("Hello, World!");
++      System.Console.WriteLine("Rock all night long!");
+   }
+}
 ```
 
 #### Code Block Indented in List
@@ -110,16 +109,31 @@ If you don't specify any programming language, the code block looks a bit differ
 
 ### Images (Figures)
 
-#### Image with Alt Text, Max-Width, and Image-Border Class
+#### Image with Alt Text and Max-Width Class
 
-{{< figure src="/attachments/developerportal/deploy/mendix-cloud-deploy/environments-details/clear-environment.png"
+{{< figure src="/attachments/community-tools/markdown-shortcodes/clear-environment.png"
     alt="Clear Environment options and confirmation"
-    max-width=60%
-    class="image-border" >}}
+    max-width=60% >}}
+
+#### Image Borders
+
+##### No Class
+
+Image will have a border added automatically.
+
+{{< figure src="/attachments/community-tools/markdown-shortcodes/half-bordered.png" >}}
+
+##### class="no-border"
+
+Image border will be suppressed. This can be used, for example, with images which have a dark background, or those which already have a border from the UX.
+
+{{< figure src="/attachments/community-tools/markdown-shortcodes/half-bordered.png" class="no-border" >}}
+
+{{< figure src="/attachments/community-tools/markdown-shortcodes/navigation-menu.png" alt="" max-width=35% class="no-border" >}}
 
 #### Image with a Link Value
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/microflows/parameter.png" alt="" link="/refguide/parameter/" >}}
+{{< figure src="/attachments/community-tools/markdown-shortcodes/parameter.png" alt="" link="/refguide/parameter/" class="no-border" >}}
 
 #### Image Indented in a List
 
@@ -127,7 +141,7 @@ If you don't specify any programming language, the code block looks a bit differ
 2. In the **Add Microflow** dialog box, in the **Name** field, enter *IVK_SetOrderToComplete*, and then click **OK**.
 3. On the **Orders** overview page, add an **Action** button to the toolbar.
 
-    {{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/activities/list-activities/working-with-lists-in-a-microflow/18581118.png" alt="Adding the Action button" >}}
+    {{< figure src="/attachments/community-tools/markdown-shortcodes/18581118.png" alt="Adding the Action button" class="no-border" >}}
 
 4. Double-click the **Action** button and change the **Caption** to *Set Processing to Complete*.
 
@@ -173,13 +187,9 @@ If the tab pane contains code with an asterisk (`*`) in it, the linter rule for 
 
 ### Videos
 
-#### Vidyard Video
+Mendix videos are hosted on Vidyard. For more information, see [the Videos section of the Style Guide](https://mendix.atlassian.net/wiki/spaces/RNDHB/pages/2510061889/Images+Icons+and+Videos#Videos).
 
 {{< vidyard "GwE17mzGma5NAvDnXrVdFA" >}}
-
-#### YouTube Video
-
-{{% youtube 5tznw5ZUQgk %}}
 
 ## Other Markdown and HTML Guidelines
 
@@ -196,7 +206,7 @@ Use two asterisks to enclose text that should appear in **bold**, and use one as
 
 ### Collapsible Content (Details)
 
-For collapsible content, use the HTML `<details>` and `<summary>` tags.
+For collapsible content, use the HTML `<details>` and `<summary>` tags:
 
 <details><summary>It cannot be a reserved word (click to see a list of reserved words)</summary>
 
@@ -301,7 +311,7 @@ For code snippets that are not part of a sentence or that span multiple lines, u
 Use HTML `<kbd>` tags to refer to keyboard keys:
 
 * Press <kbd>Enter</kbd> to select the highlighted item.
-* Stop the log capturing in your command-line tool by pressing <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+* Stop the log capturing in your command-line tool by pressing <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 ### Links
 

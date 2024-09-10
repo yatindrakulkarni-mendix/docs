@@ -1,16 +1,15 @@
 ---
 title: "OQL CAST"
 url: /refguide8/oql-cast/
-tags: ["studio pro"]
 ---
 
-## 1 Introduction
+## Introduction
 
 The CAST function converts an expression to a specific data type.
 
 The syntax is as follows:
 
-```sql {linenos=false}
+```sql
 CAST ( expression AS data_type )
 ```
 
@@ -23,7 +22,7 @@ CAST ( expression AS data_type )
     * LONG
     * STRING
 
-## 2 Supported Conversions
+## Supported Conversions
 
 The table below describes which CAST conversions are supported:
 

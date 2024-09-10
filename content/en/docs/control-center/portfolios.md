@@ -2,12 +2,11 @@
 title: "Portfolios"
 url: /control-center/portfolios/
 description: "Describes the Portfolios page in the Mendix Control Center."
-tags: ["control center", "mendix admin", "portfolios"]
 weight: 65
 no_list: true
 ---
 
-## 1 Introduction
+## Introduction
 
 The **Portfolios** page offers governance features for [portfolio management](/developerportal/portfolio-management/) in your company. You can have an overview of all portfolios in your company, manage portfolio access, delete portfolios, reject or approve requests for changes of portfolio privacy settings. 
 
@@ -17,7 +16,7 @@ The **Portfolios** page contains three tabs: [All Portfolios](#all-portfolios), 
 As a Mendix Admin, you cannot directly see the content of a portfolio. You need to have [portfolio access](#access-management) for this. You can give yourself portfolio access if needed.
 {{% /alert %}}
 
-## 2 All Portfolios {#all-portfolios}
+## All Portfolios {#all-portfolios}
 
 The **All Portfolios** tab lists all portfolios in your company. Here you can [manage portfolio access](#access-management) and [delete portfolios](#delete-portfolio). In the search box, you can search for a portfolio by its name.
 
@@ -48,11 +47,11 @@ If a portfolio has an alert icon (**⚠**), that means it no longer has a Portfo
 
 {{% /alert %}}
 
-### 2.1 Access Management {#access-management}
+### Access Management {#access-management}
 
 After you click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) in the list on the [All Portfolios](#all-portfolios) tab or the [Alerts](#alerts) tab, you can choose **Access Management** to open the **Access Management** page. The Access Management page contains two tabs: the **Members** tab and the **Pending Invites** tab.
 
-#### 2.1.1 Members {#members}
+#### Members {#members}
 
 The **Members** tab shows all users who have access to the portfolio. You can search for a user in the search box by the user name, email, company, or role.
 
@@ -69,12 +68,12 @@ In the list, you can see the following items:
   
   {{% alert color="info" %}}A Mendix Admin can activate or deactivate a user on the [Members](/control-center/members/#active-deactive-members) page in Control Center.{{% /alert %}}
   
-* **Role** – This shows the portfolio access role of the user. For more information about different roles and permissions, see the [Access Management](/developerportal/portfolio-management/#access-management) section in *Portfolio Management*.
+* **Role** – This shows the portfolio access role of the user. For more information about different roles and permissions, see [Access Management](/developerportal/portfolio-management/access-management/).
 * **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) – Clicking the button opens a menu with the following items:
     * **Edit Role** – Selecting this allows you to change the role of the user.
     * **Remove** – Selecting this allows you to remove the user from the portfolio.
 
-#### 2.1.2 Pending Invites {#pending-invites}
+#### Pending Invites {#pending-invites}
 
 When a Portfolio Manager invites a user outside the company to join the portfolio, the user gets an invite via email. The user must first accept the invite, then they can access this portfolio. Until the user accepts or rejects the invite, the invite appears on the **Pending Invites** tab. After they accept the invitation, they will appear on the **Members** tab.
 
@@ -87,7 +86,7 @@ The **Pending Invites** tab shows all pending invites of external users. You can
     * **Edit Role** – Selecting this allows you to change the access role of the pending invite.
     * **Delete** – Selecting this allows you to cancel the pending invite.
 
-### 2.2 Deleting a Portfolio {#delete-portfolio}
+### Deleting a Portfolio {#delete-portfolio}
 
 After you click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) in the list on the [All Portfolios](#all-portfolios) tab or the [Alerts](#alerts) tab, you can choose **Delete** to delete the portfolio.
 
@@ -99,7 +98,7 @@ Deleting a portfolio means that you permanently delete the portfolio, including 
 
 The **Delete Portfolio** dialog box opens. If you decide to continue, type *DELETE* in the text box, and click **Delete**.
 
-## 3 Alerts {#alerts}
+## Alerts {#alerts}
 
 The **Alerts** tab lists all the portfolios that no longer have a Portfolio Manager. You can assign new Portfolio Managers to a portfolio or delete the portfolio by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) on the list and selecting the corresponding item.
 
@@ -125,11 +124,11 @@ In the list, you can see the following items:
 
     * **Delete** – Selecting this allows you to [delete the portfolio](#delete-portfolio) permanently together with all the data in the portfolio.
 
-## 4 Privacy Requests {#privacy-requests}
+## Privacy Requests {#privacy-requests}
 
 On the **Privacy Requests** tab, you can decide whether a Mendix Admin needs to approve the creation of a restricted or open portfolio or any change of privacy settings of an existing portfolio. You can use the toggle on the tab to turn it on or off. For details on privacy settings, see the [Different Privacy Settings of a Portfolio](/developerportal/portfolio-management/#privacy-settings) section.
 
-{{< figure src="/attachments/control-center/portfolios/admin-curation-toggle.png" alt="Mendix Admins must approve changes to portfolio privacy settings" >}}
+{{< figure src="/attachments/control-center/portfolios/admin-curation-toggle.png" alt="Mendix Admins must approve changes to portfolio privacy settings" class="no-border" >}}
 
 The toggle is turned off by default. If the toggle is turned on, as a Mendix Admin, you automatically get a [notification](/developerportal/global-navigation/#notifications) whenever someone creates a restricted or open portfolio or changes the privacy settings of an existing portfolio. 
 

@@ -2,7 +2,6 @@
 title: "Static Image"
 url: /refguide/image/
 weight: 20
-tags: ["studio pro", "image", "image widget"]
 aliases:
     - /refguide/image-property.html
     - /refguide/image-property
@@ -14,23 +13,23 @@ aliases:
 For more information, see the Mendix React Client's [Migration Guide](/refguide/mendix-client/react/#migration-guide).
 {{% /alert %}}
 
-## 1 Introduction
+## Introduction
 
 The **Static image** widget can be used to show a static image on a page, layout, or snippet.
 
 For example, you can configure an image clicking which a page with customer details opens:
 
-{{< figure src="/attachments/refguide/modeling/pages/image-and-file-widgets/image/image-example.png" alt="Image Example" >}}
+{{< figure src="/attachments/refguide/modeling/pages/image-and-file-widgets/image/image-example.png" alt="Image Example" class="no-border" >}}
 
 {{% alert color="info" %}}
 If you want to dynamically show different images based on data, you need to add [dynamic image](/refguide/image-viewer/) on your page.
 {{% /alert %}}
 
-## 2 Properties
+## Properties
 
 An example of static image properties is represented in the image below:
 
-{{< figure src="/attachments/refguide/modeling/pages/image-and-file-widgets/image/image-properties.png" alt="Image Properties"   width="300"  >}}
+{{< figure src="/attachments/refguide/modeling/pages/image-and-file-widgets/image/image-properties.png" alt="Image Properties"   width="300"  class="no-border" >}}
 
 Static image properties consist of the following sections:
 
@@ -40,25 +39,25 @@ Static image properties consist of the following sections:
 * [General](#general)
 * [Visibility](#visibility)
 
-### 2.1 Common Section {#common}
+### Common Section {#common}
 
 {{% snippet file="/static/_includes/refguide/common-section-link.md" %}}
 
-### 2.2 Design Properties Section {#design-properties}
+### Design Properties Section {#design-properties}
 
 {{% snippet file="/static/_includes/refguide/design-section-link.md" %}} 
 
-### 2.3 Events Section {#events}
+### Events Section {#events}
 
 For information on the Events section and its properties, see [On Click Event and Events Section](/refguide/on-click-event/). 
 
-### 2.4 General Section {#general}
+### General Section {#general}
 
-#### 2.4.1 Image
+#### Image
 
 The file name that this widget shows. For more information on when to use images and supported formats, see [Images](/refguide/images/).
 
-#### 2.4.2 Width Unit
+#### Width Unit
 
 The width of an image. Possible values of this property are described in the table below:
 
@@ -70,13 +69,13 @@ The width of an image. Possible values of this property are described in the tab
 
 {{% alert color="info" %}}This property is not supported on native mobile pages.{{% /alert %}}
 
-#### 2.4.3 Width
+#### Width
 
 Specifies the width of the image in pixels or percentage. This option is displayed only when **Pixels** or **Percentage** are selected for the **Width Unit** described above. 
 
 Default: *not applicable*
 
-#### 2.4.4 Height Unit
+#### Height Unit
 
 The height of an image. Possible values of this property are described in the table below: 
 
@@ -88,13 +87,13 @@ The height of an image. Possible values of this property are described in the ta
 
 {{% alert color="info" %}}This property is not supported on native mobile pages.{{% /alert %}}
 
-#### 2.4.5 Height
+#### Height
 
 Specifies the width of the image in pixels or percentage. This option is displayed only when **Pixels** or **Percentage** are selected for the **Width Unit** described above. 
 
 Default: *not applicable*
 
-#### 2.4.6 Responsive
+#### Responsive
 
 This property influences how the image scales. If the value is 'Yes', the image will never get bigger than its original size. It can become smaller. If the value is 'No', the image can become both larger and smaller than its original size.
 
@@ -102,11 +101,11 @@ Default: *Yes*
 
 {{% alert color="info" %}}This property is not supported on native mobile pages.{{% /alert %}}
 
-### 2.5 Visibility Section {#visibility}
+### Visibility Section {#visibility}
 
 {{% snippet file="/static/_includes/refguide/visibility-section-link.md" %}}
 
-## 3 Converting to a Dynamic Image
+## Converting to a Dynamic Image
 
 You can convert a static image to a dynamic image that allows you to display dynamic data. For more information on dynamic image and its properties, see [Dynamic Image](/refguide/image-viewer/). 
 
@@ -117,7 +116,7 @@ To convert an image widget into a dynamic image, do the following:
 
 The **Static image** widget is converted to the dynamic image and you can configure it. 
 
-## 4 Read More
+## Read More
 
 * [Page](/refguide/page/)
 * [Images, Videos, and Files](/refguide/image-and-file-widgets/)
